@@ -122,6 +122,7 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
             tvAmueblado.setVisibility(View.VISIBLE);
             tvAmueblado2.setVisibility(View.VISIBLE);
         }
+
     }
 
     private void cargarDatos(Inmueble inmueble) {
