@@ -234,7 +234,6 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
 
         return imagenUris;
     }
-
     public void irInicioSesion(View view){
         Intent intent = new Intent(DetalleInmuebleActivity.this,InicioSesionActivity.class);
         startActivity(intent);

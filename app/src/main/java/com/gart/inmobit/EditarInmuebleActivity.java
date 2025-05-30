@@ -218,7 +218,6 @@ public class EditarInmuebleActivity extends AppCompatActivity {
                 }
             }
         }
-
         return imagenUris;
     }
     public void abrirGaleria(View view) {
