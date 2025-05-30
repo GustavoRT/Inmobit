@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "417367059028",
+    "project_id": "inmobit-39651",
+    "storage_bucket": "inmobit-39651.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417367059028:android:ca5931d3edfdaf9b19dbc1",
+        "android_client_info": {
+          "package_name": "com.gart.inmobit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD12RDRw_a4DPWfWuCRomnenDdRrepBOq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417367059028:android:1d3e1c2d32a5bebf19dbc1",
+        "android_client_info": {
+          "package_name": "gart.e"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD12RDRw_a4DPWfWuCRomnenDdRrepBOq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
