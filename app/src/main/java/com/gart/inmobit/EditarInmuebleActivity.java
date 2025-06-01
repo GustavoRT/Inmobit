@@ -46,7 +46,8 @@ public class EditarInmuebleActivity extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTipoInmueble, autoCompleteTipoOperacion;
     TextInputLayout autoCompleteTipoOperacionn;
     private Spinner numHabitaciones, numBanos;
-    private TextInputEditText etPrecio, etSuperficie, etComentarios, etDireccion;
+    private TextInputEditText etPrecio, etSuperficie, etComentarios, etDireccion ;
+    private TextView etvisualizacion;
     private SwitchCompat swCalefaccion, swAire, swAscensor, swParking, swTrastero, swAmueblado;
     private FirebaseAuth mAuth;
     private MaterialButton loginButton;
@@ -75,6 +76,7 @@ public class EditarInmuebleActivity extends AppCompatActivity {
         etPrecio = findViewById(R.id.et_precio);
         etSuperficie = findViewById(R.id.et_superficie);
         etComentarios = findViewById(R.id.et_comentarios);
+        etvisualizacion = findViewById(R.id.et_visualizacion);
         swCalefaccion = findViewById(R.id.switch_calefaccion);
         swAire = findViewById(R.id.switch_aire_acondicionado);
         swAscensor = findViewById(R.id.switch_ascensor);
@@ -164,6 +166,7 @@ public class EditarInmuebleActivity extends AppCompatActivity {
         autoCompleteTipoOperacion.setText(inmueble.getOperacion());
         etPrecio.setText(inmueble.getPrecio()+" €");
         etSuperficie.setText(String.valueOf(inmueble.getSuperficie()));
+        etvisualizacion.setText(String.valueOf(inmueble.getVisualizar()));
 
 
         if(inmueble.getNumHabitaciones().equalsIgnoreCase("1"))  numHabitaciones.setSelection(0);

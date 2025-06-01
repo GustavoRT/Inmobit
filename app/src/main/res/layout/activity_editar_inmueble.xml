@@ -232,6 +232,30 @@
                         android:visibility="gone"
                         android:layout_marginBottom="16dp" />
 
+                    <TextView
+                        android:id="@+id/labelVisualizacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Visualizaciones :"
+                        android:textColor="@color/gray_600"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toBottomOf="@id/id"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <!-- Fecha de alta -->
+                    <TextView
+                        android:id="@+id/et_visualizacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="visualizaciones: "
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/labelVisualizacion"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>

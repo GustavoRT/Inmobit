@@ -12,13 +12,9 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.location.DetectedActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +39,7 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private MaterialButton loginButton;
     private BottomNavigationView bottomNavigation;
+    FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +120,7 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
             tvAmueblado2.setVisibility(View.VISIBLE);
         }
 
+        aumentarVisualizacion();
     }
 
     private void cargarDatos(Inmueble inmueble) {
@@ -142,6 +140,7 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
         tvTrastero.setText(inmueble.isTrastero() ? "Si" : "No");
         tvAmueblado.setText(inmueble.isAmueblado() ? "Si" : "No");
         tvFechaPublicacion.setText(inmueble.getFechaRegistro());
+
 
         ArrayList<Uri> imagenesLocales = cargarImagenesDesdeListaRutas(inmueble.getImagenes());
        // ArrayList<Uri> imagenesLocales = cargarImagenesDesdeMemoria();
@@ -237,6 +236,24 @@ public class DetalleInmuebleActivity extends AppCompatActivity {
     public void irInicioSesion(View view){
         Intent intent = new Intent(DetalleInmuebleActivity.this,InicioSesionActivity.class);
         startActivity(intent);
+    }
+
+    public void aumentarVisualizacion(){
+        inmueble.setVisualizacion();
+        Toast.makeText(this, inmueble.getUsuarioId() +"-" + inmueble.getId()+ "-"+ inmueble.getVisualizar(), Toast.LENGTH_SHORT).show();
+        FirebaseFirestore.getInstance().collection("usuarios")
+                .document(inmueble.getUsuarioId())
+                .collection("inmuebles")
+                .document(inmueble.getId())
+                .set(inmueble)
+                .addOnSuccessListener(unused -> {
+                  //  Toast.makeText(this, "Inmueble actualizado", Toast.LENGTH_SHORT).show();
+                    Log.i("Firebase", "Inmueble actualizado");
+                })
+                .addOnFailureListener(e -> {
+                  //  Toast.makeText(this, "Error al actualizar inmueble", Toast.LENGTH_SHORT).show();
+                    Log.e("Firebase", "Error al actualizar inmueble", e);
+                });
     }
 
 }

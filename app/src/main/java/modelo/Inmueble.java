@@ -28,6 +28,7 @@ public class Inmueble implements Serializable {
     private String latitud;
     private String longitud;
     private String direccion;
+    private int visualizar;
 
     public Inmueble() {
     }
@@ -53,8 +54,15 @@ public class Inmueble implements Serializable {
         this.direccion =direccion;
         this.latitud = latitud;
         this.longitud = longitud;
+        this.visualizar = 0;
     }
 
+    public void setVisualizacion(){
+        this.visualizar = this.visualizar + 1;
+    }
+    public int getVisualizar(){
+        return visualizar;
+    }
     public boolean isAmueblado() {
         return amueblado;
     }
